@@ -38,12 +38,74 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="welcome-to-wa-backend-s-documentation">
+  <blockquote>
+<div></div></blockquote>
+<div class="section" id="welcome-to-wa-backend-s-documentation">
 <h1>Welcome to WA Backend’s documentation!<a class="headerlink" href="#welcome-to-wa-backend-s-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
+</div>
+<div class="section" id="project-configuration">
+<h1>Project Configuration<a class="headerlink" href="#project-configuration" title="Permalink to this headline">¶</a></h1>
+<p>This configuration file will be used by Translation recorder to build the hierarchal structure of the project</p>
+<p>A project hierarchy is separated into different levels each one contain a list of item within it. These items are things such as chapter with in a book or books within an anthology. By creating a hierarchy of between these items it allows TR to provide easy and efficient project set-up based on a specific set of specifications.</p>
+<p>Here is a simple example of what the hierarchy could look like:</p>
+<div class="section" id="item-structure">
+<h2>Item Structure<a class="headerlink" href="#item-structure" title="Permalink to this headline">¶</a></h2>
+<p>Each item or level in the hierarchy can have the following keys:</p>
+<ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">localization</span></code> Only used at the top-level of the hierarchy and references the localization folder for this project.</p>
+<blockquote>
+<div><ul class="simple">
+<li>The localization properties files should be stored in this location. Each localized file should be named <code class="docutils literal"><span class="pre">yourResourceName_languageslug.properties</span></code> (e.g., <code class="docutils literal"><span class="pre">door43_es.properties</span></code> for the Door43 project localization file for Spanish)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">media</span></code>: Provides the path to any media that should be associated with this level</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">label</span></code>: Type of this item is (e.g., <code class="docutils literal"><span class="pre">`book</span></code>). Note that this value should not be the literal string, but the name of the property in the localization files</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">title</span></code>: Name of the item (also localized like <code class="docutils literal"><span class="pre">label</span></code>)</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">identifier</span></code>: An identifier for the item if any</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">sort</span></code>: Is the imposed order of the items within this level</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">contains</span></code>: Either a list of child items, a single child item, or a path to a secondary JSON file containing the child items.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="example-project-config-json-file">
+<h2>Example <code class="docutils literal"><span class="pre">project_config.json</span></code> File<a class="headerlink" href="#example-project-config-json-file" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+               <span class="s2">&quot;media&quot;</span><span class="p">:</span> <span class="s2">&quot;./media/door43_old_testament.png&quot;</span>
+               <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;anthology&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;oldTestament&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;bible-ot&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;contains&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="p">{</span>
+                       <span class="s2">&quot;media&quot;</span><span class="p">:</span> <span class="s2">&quot;./media/door43_genesis.png&quot;</span>
+                       <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;book&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;genesis&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;gen&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;contains&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="p">{</span>
+                       <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;chapter&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;genesis01&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;gen01&quot;</span><span class="p">,</span>
+                       <span class="s2">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+               <span class="p">}]</span>
+               <span class="p">}]</span>
+       <span class="p">}]</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="chunks">
-<span id="id1"></span><h2>Chunks<a class="headerlink" href="#chunks" title="Permalink to this headline">¶</a></h2>
+<h1>Chunks<a class="headerlink" href="#chunks" title="Permalink to this headline">¶</a></h1>
 <p>Each project is separated into smaller chunks, which the user records. The recorded chunks are later put together to create the finished project. Each chunk requires the following:</p>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">start</span></code>: the beginning unit number of the chunk</li>
@@ -51,7 +113,7 @@
 <li><code class="docutils literal"><span class="pre">sort</span></code>: the chunk number</li>
 </ul>
 <p>The default chunk is one unit of the smallest division of the source text (e.g. the smallest division of the Bible is verses, so the default chunk would be one verse).</p>
-<p><strong>Example:</strong></p>
+<p><strong>Example chunks.json file:</strong></p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span>
 
   <span class="s">&quot;chunks&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[{</span>
@@ -84,7 +146,6 @@
 
 <span class="p p-Indicator">}</span>
 </pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="indices-and-tables">

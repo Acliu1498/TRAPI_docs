@@ -18,33 +18,20 @@ The default chunk is one unit of the smallest division of the source text (e.g. 
 .. code-block:: yaml
 
     {
-
-      "chunks": [{
-
-                     start: 1
-
-                     end: 1
-
+        "chunks": [{
+                     start: 1,
+                     end: 1,
                      sort: 1
-
                  },
-
                  {
-                     start: 2
-
-                     end: 2
-
+                     start: 2,
+                     end: 2,
                      sort: 2
-
                  },
-
                  {
                     start: 3
-
-                     end: 3
-
-                     sort: 3
-
-                 }]
-
-}
+                    end: 3
+                    sort: 3
+                 }
+                 ]
+                 }
