@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to WA Backend’s documentation! &mdash; WA Backend  documentation</title>
+  <title>Chunks &mdash; WA Backend  documentation</title>
   
 
   
@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Project Configuration" href="project_config.html" /> 
+    <link rel="prev" title="Project Configuration" href="project_config.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -47,7 +47,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> WA Backend
+            <a href="index.html" class="icon icon-home"> WA Backend
           
 
           
@@ -78,9 +78,13 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="project_config.html">Project Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chunks.html">Chunks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chunks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-chunks-json-file">Example <code class="docutils literal"><span class="pre">chunks.json</span></code> File</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -95,7 +99,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">WA Backend</a>
+          <a href="index.html">WA Backend</a>
         
       </nav>
 
@@ -124,15 +128,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Welcome to WA Backend’s documentation!</li>
+      <li>Chunks</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/chunks.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -145,33 +149,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <blockquote>
-<div></div></blockquote>
-<div class="section" id="welcome-to-wa-backend-s-documentation">
-<h1>Welcome to WA Backend’s documentation!<a class="headerlink" href="#welcome-to-wa-backend-s-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="project_config.html">Project Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="project_config.html#item-structure">Item Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="project_config.html#example-project-config-json-file">Example <code class="docutils literal"><span class="pre">project_config.json</span></code> File</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="chunks.html">Chunks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="chunks.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="chunks.html#example-chunks-json-file">Example <code class="docutils literal"><span class="pre">chunks.json</span></code> File</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="chunks">
+<span id="id1"></span><h1>Chunks<a class="headerlink" href="#chunks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Each project is separated into smaller chunks, which the user records. The recorded chunks are later put together to create the finished project. Each chunk requires the following:</p>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+<li><code class="docutils literal"><span class="pre">start</span></code>: the beginning unit number of the chunk</li>
+<li><code class="docutils literal"><span class="pre">end</span></code>: the end unit number of the chunk</li>
+<li><code class="docutils literal"><span class="pre">sort</span></code>: the chunk number</li>
 </ul>
+<p>The default chunk is one unit of the smallest division of the source text (e.g. the smallest division of the Bible is verses, so the default chunk would be one verse).</p>
+</div>
+<div class="section" id="example-chunks-json-file">
+<h2>Example <code class="docutils literal"><span class="pre">chunks.json</span></code> File<a class="headerlink" href="#example-chunks-json-file" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span>
+    <span class="s">&quot;chunks&quot;</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[{</span>
+                 <span class="nv">start</span><span class="p p-Indicator">:</span> <span class="nv">1</span><span class="p p-Indicator">,</span>
+                 <span class="nv">end</span><span class="p p-Indicator">:</span> <span class="nv">1</span><span class="p p-Indicator">,</span>
+                 <span class="nv">sort</span><span class="p p-Indicator">:</span> <span class="nv">1</span>
+             <span class="p p-Indicator">},</span>
+             <span class="p p-Indicator">{</span>
+                 <span class="nv">start</span><span class="p p-Indicator">:</span> <span class="nv">2</span><span class="p p-Indicator">,</span>
+                 <span class="nv">end</span><span class="p p-Indicator">:</span> <span class="nv">2</span><span class="p p-Indicator">,</span>
+                 <span class="nv">sort</span><span class="p p-Indicator">:</span> <span class="nv">2</span>
+             <span class="p p-Indicator">},</span>
+             <span class="p p-Indicator">{</span>
+                <span class="nv">start</span><span class="p p-Indicator">:</span> <span class="nv">3</span>
+                <span class="nv">end</span><span class="p p-Indicator">:</span> <span class="nv">3</span>
+                <span class="nv">sort</span><span class="p p-Indicator">:</span> <span class="nv">3</span>
+             <span class="p p-Indicator">}]</span>
+ <span class="p p-Indicator">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -182,8 +193,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="project_config.html" class="btn btn-neutral float-right" title="Project Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+        <a href="project_config.html" class="btn btn-neutral" title="Project Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

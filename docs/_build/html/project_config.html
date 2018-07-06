@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Project Configuration &mdash; WA Backend  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chunks" href="chunks.html" />
+    <link rel="prev" title="Welcome to WA Backend’s documentation!" href="index.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> WA Backend
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Project Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#item-structure">Item Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-project-config-json-file">Example <code class="docutils literal"><span class="pre">project_config.json</span></code> File</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chunks.html">Chunks</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WA Backend</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Project Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/project_config.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="project-configuration">
+<h1>Project Configuration<a class="headerlink" href="#project-configuration" title="Permalink to this headline">¶</a></h1>
+<p>This configuration file will be used by Translation recorder to build the hierarchal structure of the project</p>
+<p>A project hierarchy is separated into different levels each one contain a list of item within it. These items are things such as chapter with in a book or books within an anthology. By creating a hierarchy of between these items it allows TR to provide easy and efficient project set-up based on a specific set of specifications.</p>
+<p>Here is a simple example of what the hierarchy could look like:</p>
+<div class="section" id="item-structure">
+<h2>Item Structure<a class="headerlink" href="#item-structure" title="Permalink to this headline">¶</a></h2>
+<p>Each item or level in the hierarchy can have the following keys:</p>
+<ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">localization</span></code> Only used at the top-level of the hierarchy and references the localization folder for this project.</p>
+<blockquote>
+<div><ul class="simple">
+<li>The localization properties files should be stored in this location. Each localized file should be named <code class="docutils literal"><span class="pre">yourResourceName_languageslug.properties</span></code> (e.g., <code class="docutils literal"><span class="pre">door43_es.properties</span></code> for the Door43 project localization file for Spanish)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">media</span></code>: Provides the path to any media that should be associated with this level</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">label</span></code>: Type of this item is (e.g., <code class="docutils literal"><span class="pre">`book</span></code>). Note that this value should not be the literal string, but the name of the property in the localization files</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">title</span></code>: Name of the item (also localized like <code class="docutils literal"><span class="pre">label</span></code>)</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">identifier</span></code>: An identifier for the item if any</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">sort</span></code>: Is the imposed order of the items within this level</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">contains</span></code>: Either a list of child items, a single child item, or a path to a secondary JSON file containing the child items.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="example-project-config-json-file">
+<h2>Example <code class="docutils literal"><span class="pre">project_config.json</span></code> File<a class="headerlink" href="#example-project-config-json-file" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+        <span class="s2">&quot;localization&quot;</span><span class="p">:</span> <span class="s2">&quot;./localization&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;media&quot;</span><span class="p">:</span> <span class="s2">&quot;./media/door43_bible.png&quot;</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;bible&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;bible&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;contains&quot;</span><span class="p">:</span> <span class="p">[</span>
+<span class="p">{</span>
+        <span class="s2">&quot;media&quot;</span><span class="p">:</span> <span class="s2">&quot;./media/door43_old_testament.png&quot;</span>
+        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;anthology&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;oldTestament&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;bible-ot&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;contains&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+                <span class="s2">&quot;media&quot;</span><span class="p">:</span> <span class="s2">&quot;./media/door43_genesis.png&quot;</span>
+                <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;book&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;genesis&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;gen&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;contains&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+                <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;chapter&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;genesis01&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;gen01&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+        <span class="p">}]</span>
+        <span class="p">}]</span>
+<span class="p">}]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="chunks.html" class="btn btn-neutral float-right" title="Chunks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to WA Backend’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Matthew Russell, Alex Liu, Dilip Maharjan, Jennifer Huang.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
