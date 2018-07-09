@@ -1,31 +1,28 @@
 ---
 
 dublin_core:
-    conformsto: "rc0.2"
-    contributor:
-        -  " "
-        - " "
-    creator: " "
-    description: " "
-    identifier: "ulb"
-    issued: " "
+    conformsto: 'rc0.2'
+    creator: 'This might be the user hash/id'
+    description: 'This a projected created by tR.'
+    identifier: 'ulb'
+    issued: '2018-07-06'
     language:
-        identifier: "es"
-        title: "Español"
-        direction: "ltr"
-    publisher: " "
-    rights: "CC BY-SA 4.0"
+        identifier: 'es'
+        title: 'Español'
+        direction: 'ltr'
+    publisher: 'Resource Publisher'
+    rights: 'CC BY-SA 4.0'
     source:
-        identifier: "ulb"
-        language: "en"
-        version: "12"
-    subject: "Bible"
-    type: "bundle"
-    version: "2"
+        identifier: 'ulb'
+        language: 'en'
+        version: '12'
+    subject: 'Bible'
+    type: 'bundle'
+    version: '2'
 
 projects:
     -
-        title: "Genesis"
-        identifier: "gen"
+        title: 'Genesis'
+        identifier: 'gen'
         sort: 1
-        path: "./content"
+        path: './content'

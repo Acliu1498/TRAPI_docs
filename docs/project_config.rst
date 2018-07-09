@@ -53,26 +53,29 @@ Example ``project_config.json`` File
   		"title": "bible",
   		"sort": "1",
   		"contains": [
-    	{
-      		"media": "./media/door43_old_testament.png"
-      		"label": "anthology",
-      		"title": "oldTestament",
-      		"identifier": "bible-ot",
-      		"sort": "1",
-      		"contains": [
-        	{
-          		"media": "./media/door43_genesis.png"
-          		"label": "book",
-          		"title": "genesis",
-          		"identifier": "gen",
-          		"sort": "1",
-          		"contains": [
-            	{
-              		"label": "chapter",
-              		"title": "genesis01",
-              		"identifier": "gen01",
-              		"sort": "1"
-            	}]
-        	}]
-    	}]
+	    	{
+	      		"media": "./media/door43_old_testament.png"
+	      		"label": "anthology",
+	      		"title": "oldTestament",
+	      		"identifier": "bible-ot",
+	      		"sort": "1",
+	      		"contains": [
+		        	{
+		          		"media": "./media/door43_genesis.png"
+		          		"label": "book",
+		          		"title": "genesis",
+		          		"identifier": "gen",
+		          		"sort": "1",
+		          		"contains": [
+			            	{
+			              		"label": "chapter",
+			              		"title": "genesis01",
+			              		"identifier": "gen01",
+			              		"sort": "1"
+			            	}
+						]
+		        	}
+				]
+	    	}
+		]
 	}
